@@ -24,9 +24,9 @@ MEDIA_URL = "media/"
 SECRET_KEY = 'django-insecure-+kxol(dqyor_bl=af_^74k9+@10q7&3&zxd19flqkd_8o*&v=0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app','.alexys.online','127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app','.alexys.online']
 
 
 # Application definition
