@@ -1,0 +1,144 @@
+<html>
+<head>
+  <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+     p{
+        color: #dddddd;
+    }
+    label{
+        color: rgb(141,141,141);
+    }
+    body {
+  background-color: #363535;
+  font-family: 'Montserrat', sans-serif;
+}
+  h1{
+    color:#dddddd;
+  }
+
+
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    tr{
+      color:#dddddd;
+      text-align:left;
+    }
+    
+    th{
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;
+    }
+
+    td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: rgb(92, 92, 92);
+    }
+    ul  {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+.greenify{
+  color: #29ba5c;
+}
+
+</style>
+</head>
+<body class = "animate-bottom">
+<h1>The two playlists share <span style = "color:#29ba5c">{{length.0}}</span> same songs, with <span style = "color:#29ba5c">{{length.1}}</span> and <span style = "color:#29ba5c">{{length.2}}</span> different songs in the two playlists respectively!</h1>
+<button onclick = "window.location.href='/compare';">Wanna try again?</button>
+
+<p> On PC, some songs should play if you hover over the album cover! (Though it might need to load...)</p>
+
+
+<table>
+  <tr>
+    <th>Unique songs in <span style = "color:#29ba5c">{{length.3}}</span></th>
+    <th>Same Songs in <span style = "color:#29ba5c">Both!</span></th>
+    <th>Unique songs in <span style = "color:#29ba5c">{{length.4}}</span></th>
+  </tr>
+  {% for x in ultlist %}
+  <tr>
+    <td>
+      <ul>
+        <li>{{x.1}}</li>
+        <li>{{x.2}}</li>
+        <li>
+          <img src="{{x.4}}" onmouseover="PlaySound('{{x.0}}')" onmouseout="StopSound('{{x.0}}')" />
+          <audio src="{{x.3}}" id="{{x.0}}"></audio>
+        </li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>{{x.6}}</li>
+        <li>{{x.7}}</li>
+        <li>
+          <img src="{{x.9}}" onmouseover="PlaySound('{{x.5}}')" onmouseout="StopSound('{{x.5}}')" />
+          <audio src="{{x.8}}" id="{{x.5}}"></audio>
+        </li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>{{x.11}}</li>
+        <li>{{x.12}}</li>
+        <li>
+          <img src="{{x.14}}" onmouseover="PlaySound('{{x.10}}')" onmouseout="StopSound('{{x.10}}')" />
+          <audio src="{{x.13}}" id="{{x.10}}"></audio>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<!--
+#TODO: okay so we wattag it, have a button here and when it is pressed, we get the html from a python to put in the block content
+#TODO: it'll go like this: Same songs in the middle, showing Name, artist, album photo, mp3, in a table, table being as long as amount of songs in same. if 0 : welp.
+#todo: then same but to the different songs on the side
+-->
+
+
+
+
+</body>
+
+<script>
+  function PlaySound(soundobj) {
+    var thissound = document.getElementById(soundobj);
+    thissound.play();
+  }
+  
+  function StopSound(soundobj) {
+    var thissound = document.getElementById(soundobj);
+    thissound.pause();
+    thissound.currentTime = 0;
+  }
+
+
+
+  </script>
+</html>

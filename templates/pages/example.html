@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+ul  {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+</style>
+</head>
+<body>
+
+<h2>HTML Table</h2>
+
+<table>
+  <tr>
+    <th>Unique in Playlist 1</th>
+    <th>Same Songs in both</th>
+    <th>Unique in Playlist 2</th>
+  </tr>
+  <tr>
+    <td>
+      <ul>
+			  <li>{name}</li>
+        <li>{artist}</li> 
+        <li> <img src = "https://i.scdn.co/image/ab67616d00004851699c10534ea98a2fcfc6b5da" onmouseover="PlaySound('audio-1')" onmouseout="StopSound('audio-1')">
+            	<audio id = "audio-1" src="https://p.scdn.co/mp3-preview/979cc2cec4cd1d4b0470229dcbb096b9ede38bc7?cid=432742e8cdd04d149d847dd79a797024"> </audio>
+          </li>
+		</ul> 
+    </td>
+         
+    <td>
+    	<ul>
+			<li>{name}</li>
+            <li>{artist}</li>
+            <li> <img src = "https://i.scdn.co/image/ab67616d00004851699c10534ea98a2fcfc6b5da" onmouseover="PlaySound('audio-1')" onmouseout="StopSound('audio-1')">
+            	<audio id = "audio-1" src="https://p.scdn.co/mp3-preview/979cc2cec4cd1d4b0470229dcbb096b9ede38bc7?cid=432742e8cdd04d149d847dd79a797024"> </audio>
+			</li>
+		</ul> 
+    </td>
+    
+    <td>
+    	<ul>
+			<li>{name}</li>
+            <li>{artist}</li>
+            <li> <img src = "https://i.scdn.co/image/ab67616d00004851699c10534ea98a2fcfc6b5da" onmouseover="PlaySound('audio-1')" onmouseout="StopSound('audio-1')">
+            	<audio id = "audio-1" src="https://p.scdn.co/mp3-preview/979cc2cec4cd1d4b0470229dcbb096b9ede38bc7?cid=432742e8cdd04d149d847dd79a797024"> </audio>
+			</li>
+		</ul> 
+    </td>
+  </tr>
+</table>
+</body>
+<!-- We could make the ID for the audio the PID since we already have that and can simply plug in-->
+<script>
+    function PlaySound(soundobj) {
+      var thissound = document.getElementById(soundobj);
+      thissound.play();
+    }
+    
+    function StopSound(soundobj) {
+      var thissound = document.getElementById(soundobj);
+      thissound.pause();
+      thissound.currentTime = 0;
+    }
+    </script>
+    
+    </html>

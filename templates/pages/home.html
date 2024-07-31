@@ -1,0 +1,45 @@
+<!-- pages/templates/pages/home.html -->
+
+{% extends "base.html" %}
+
+{% block page_content %}
+<div id = "greet">
+    <ul>
+        <li><h4> Howdy, my name is </h3></li>
+        <li><h1><span id = name>Alexys Octavio Veloz</span></h1></li>
+    </ul>
+</div>
+
+
+<div id = projects>
+<h1><span id = titles>Projects</span></h1>
+<p>My Project's are my portfolio -- I'm a Full-Stack Developer (Though I prefer back-end development)!</p>
+
+<p>I excel in Java, SQL (MySQL preferred), Python, and  C++!</p>
+<p><a href= "/projects">Past Projects!</a></p>
+</div>
+<!--
+<div id = "experience">
+    
+</div>
+-->
+<div id = "about">
+    <h1><span id = titles>About</span></h1>
+    <table>
+        <td>
+    <img src = "media/HeadProper.png" class = picOfMe>
+        </td>
+        <td>
+    <p>I'm a UCF graduate that resides in Orlando, Florida! I've been interested in computers and how they work ever since I was in middle school trying to modify Minecraft. I love software devolopment and figuring out how things work!</p>
+    <p>In my free time I like to go on trails, learn dances, practice on different coding languages, and I've been picking up pixel art as of late!</p>
+<p>For any Inquiries or Job Opportunities, please contact me at <a href = mailto:Alexys.Veloz@proton.me>Alexys.Veloz@proton.me</a> </p>
+<p><a href = "https://www.linkedin.com/in/alexys-veloz-30001a303/">My LinkedIn</a>  <br>      <a href ="https://github.com/Tomatoats">My GitHub</a> </p>
+<button onclick =  "window.location.href='media/Resume.docx';" target = "_blank">Resume</button>
+<button onclick =  "window.location.href='media/Portfolio.docx';">Portolio (docx version)</button>
+</td>
+    </table>
+
+
+</div>
+
+{% endblock page_content %}

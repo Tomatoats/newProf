@@ -1,0 +1,119 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="portfolio, resume">
+    <meta name="keywords" content ="Alexys, Alexys Veloz, Alexys Octavio Veloz, resume, developer, IT, software engineer">
+    <meta name="article:author" content ="Alexys Octavio Veloz">
+
+    <title>{% block title %}My Personal Portfolio{% endblock title %}</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+</head>
+<style>
+    
+    ul  {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+  }
+  h5 {
+    color: #dedede;
+  }
+    h4 {
+        color: #dedede}
+    h2{
+        color:#dedede;
+    }
+    h1{
+        color:#dedede;
+    }
+    p {
+        color: #d5d4d4;
+    }
+    text{
+        color: #dedede;
+        text-align: left;
+    }
+    body {
+        
+        background-color: #000000;
+    font-family:Arial, Helvetica, sans-serif ;
+}
+    button  {
+        background-color:#ff7f50;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-block-end-color: #ff7f50;
+    
+    }
+
+    #greet {
+        margin: 0;
+align-items: center;
+vertical-align: middle;
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  width: 80vw;
+
+}
+#projects {
+    margin: 0;
+}
+#experience {
+    
+}
+#about {
+  .picOfMe {
+			width: 16em;
+			height: 16em;
+            
+  }
+  p {
+			margin-left: 2em;
+}
+    button {
+        margin-left: 2em;
+}
+}
+#name {
+    font-size: 5rem;
+    background:  linear-gradient(#ff7f50, #974a2e);
+    color: transparent;
+    background-clip: text;
+  -webkit-background-clip: text;
+}
+#titles {
+    background:  linear-gradient(#ff7f50, #974a2e);
+    color: transparent;
+    background-clip: text;
+  -webkit-background-clip: text;
+}
+.card-body {
+    background-color: #323232;
+
+}
+.card-title {
+    color: #dedede;
+}
+.card-img-top {
+    background-color: #323232;
+}
+.row {
+    background-color: #000000;
+}
+
+
+</style>
+<body class="container">
+{% block page_content %}{% endblock page_content %}
+</body>
+</html>

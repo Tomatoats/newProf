@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compare Spotify Playlists!">
+    <meta name="keywords" content ="Spotify, Compare, Playlists, Compare playlists, Spotify Compare, compare spotify Playlists">
+    <meta name="article:author" content ="Alexys Octavio Veloz">
+
+    <title>{% block title %}Compare your Spotify Playlists!{% endblock title %}</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+</head>
+<style>
+
+    .tableform {
+        margin-left: auto;
+
+    }
+    .submit{
+        background-color: #33df6f;
+    }
+
+    p{
+        color: #dddddd;
+    }
+    label{
+        color: #dddddd;
+    }
+    body {
+  background-color: #363535;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+
+        table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      text-align: center;
+      padding: 8px;
+    }
+    
+    
+ul  {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+  }
+
+input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 90%;
+}
+
+.starter {
+  text-align: center;
+  height: 120px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #29ba5c;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+
+}
+.backToProjects {
+  position: absolute;
+  bottom: 100px;
+}
+h3{
+        color: #dddddd;
+    }
+    h2{
+        color: #dddddd;
+    }
+h4{
+    color: #dddddd;
+    }
+
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+    
+  </style>
+
+<body class="container">
+    <div class = tableform>
+    <table>
+    <form name = coolForm method = "POST">{% csrf_token %}
+            <tr>
+            <td>
+            <ul>
+            <li><label for="play1">Put the link of the first playlist: </label><br></li>
+            <li><input type="text" id="play1" name="play1"><br>
+            <ul>
+            </td>
+            <td>
+            <ul>
+            <li><input type = "submit" value="Compare!" id = "submit" class = 'submit'></li>
+            <ul>
+            </td>
+            <td>
+            <ul>
+            <li><label for="play2">Put the link of the second playlist:  </label><br></li>
+            <li><input type="text" id="play2" name="play2"><br>
+            <ul>
+            </td>
+            </tr>
+        </form>
+        </table>
+</div>
+<div>
+    <label id = "loading" class = "message">{{badmessage}}</label><br>
+
+</div>
+
+
+<div class="loader" id = toLoad style="display:none"></div> 
+<div class = "starter" id = started style="">
+<h2>This is <span style = "color:#29ba5c">Spotify</span> Compare!</h2>
+<h3>To make this work:</h3>
+<h4>Put in any two spotify playlist links and click the compare button!</h4>
+<h4>It'll load your songs and show which ones are in both playlists!</h4>
+<h4>Additionally, it'll also show the different songs in each playlist!</h4>
+</div>
+
+<div class = backToProjects>
+<p><a href = "/projects">Check out some other Projects done by me!</a></p>
+</div>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded",function () { 
+        document.getElementById('submit').addEventListener('click', function () { 
+            document.getElementById("loading").innerHTML="Loading now! If there's over 500 songs total in the two playlists, it might take a second to load!";})});
+
+
+            document.addEventListener("DOMContentLoaded",function () { 
+        document.getElementById('submit').addEventListener('click', function () { 
+            document.getElementById("toLoad").style="display:";})});
+
+            document.addEventListener("DOMContentLoaded",function () { 
+        document.getElementById('submit').addEventListener('click', function () { 
+            document.getElementById("started").style="display:none";})});
+
+
+
+
+
+
+</script>
+
+
+</html>
